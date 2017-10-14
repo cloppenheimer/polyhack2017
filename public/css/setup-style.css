@@ -1,0 +1,43 @@
+body{
+	background-color: #009999;
+}
+.container{
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-flex-flow: row wrap;
+}
+#signIn{
+	justify-content: center;
+	margin-top: 23%;
+	padding-right: 10%;
+	position: absolute;
+}
+#signUp{
+	justify-content: center;
+	padding-left: 30%;
+	margin-top: 23%;
+	position: absolute;
+}
+#buttonContent{
+	display: block;
+}
+.buttons{
+	height: 150px;
+	width: 200px;
+	background-color: transparent;
+	border-color: white;
+	border-width: 2%;
+	color: white;
+	border-style: solid;
+	outline: none !important;
+}
+.buttons:active{
+	outline: none !important;
+}
+.buttons:hover{
+	background-color: white;
+	color: #009999;
+}
