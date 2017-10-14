@@ -1,3 +1,4 @@
+
 function getLocations(city) {
         console.log(city);
         var id;
@@ -15,6 +16,7 @@ function getLocations(city) {
                 id = 304551;
         else if (city == "London" || city == "london")
                 id = 186338;
+        console.log("id is" + id);
 
 
         /*var request = new XMLHttpRequest();
@@ -46,7 +48,7 @@ function getLocations(city) {
         $.get(url1, function(responseArray){
                 console.log(responseArray);
                 var locationNames = [];
-                var info = JSON.parse(request.responseText).data;
+                var info = responseArray.data;
                 for (var i = 0; i < info.length; i++) {
                         console.log(info[i].name);
                         locationNames.push(info[i].name);

@@ -57,31 +57,19 @@ app.post('/submit', function(request, response) {
         });
 });
 
-app.post('/addLocations'), function(request, response) {
+app.post('/addLocations', function(request, response) {
 
         locations = request.body.locations;
         console.log(locations);
-        /*db.collection("userInfo", function(error, coll) {
-                var currUser = coll.find({isCurrentUser: true});
-                console.log(currUser);
-                var name = currUser.name;
-                coll.update({name: name}, {'$set': {locations: locations}});
-                if (error) {
-                        console.log("error");
-                        response.send(500);
-                }
-                else {
-                        response.send(200);
-                }
-        });*/
 
-}
 
-app.get('/getLocations'), functions(request, response) {
+});
+
+app.get('/getLocations', function(request, response) {
         response.send(locations);
-}
+});
 
-app.post('/userLocations'), function(request, response) {
+app.post('/userLocations', function(request, response) {
 
         var userLocations = request.body.userLocations;
         db.collection("userInfo", function(error, coll) {
@@ -98,7 +86,63 @@ app.post('/userLocations'), function(request, response) {
                 }
         });
 
-}
+});
+
+app.get('/getMatches', function(request, response) {
+        var matches = [];
+        var numSharedLocations = 0;
+        var numSharedInterests = 0;
+        db.collection("userInfo", function(error, coll) {
+                var currUser = coll.find({isCurrentUser: true});
+                coll.find().toArray(function(error, users){
+                        for (var i = 0; i < users.length; i++) {
+                                if (users[i].username != currUser.username) {
+
+                                        for (var j = 0; j < 3; j++) {
+                                                var currLocation = currUser.userLocations[j];
+                                                for (var k = 0; k < 3; k++) {
+                                                        if (currLocation == users[i].userLocations[k]) {
+                                                                numSharedLocations++;
+                                                                break;
+                                                        }
+                                                }
+                                        }
+
+                                        for (var j = 0; j < currUser.interests.length; j++) {
+                                                var currInterest = currUser.interests[j];
+                                                 for (var k = 0; k < users[i].interests.length; k++) {
+                                                        if (currInterest == users[i].interests[k]) {
+                                                                numInterests++;
+                                                                break;
+                                                        }
+                                                }
+                                        }
+
+                                        var name = users[i].name;
+                                        var percent = (60 * (numSharedLocations/3)) + (40 * (numSharedInterests/8));
+
+                                        var toInsert = {
+                                                "name": name,
+                                                "percent": percent
+                                        };
+                                        matches.push(toInsert);
+                                }
+                        }
+
+                });
+
+        });
+
+        matches.sort(function (a, b) {
+                return a.percent - b.percent;
+        });
+
+        matches = matches.slice(0, 10);
+
+        response.send(matches);
+
+});
+
 
 app.get('/', function(request, response) {
         response.sendFile(path.resolve('./splash.html'));
@@ -114,6 +158,10 @@ app.get('/location.html', function(request, response) {
 
 app.get('/attractions.html', function(request, response) {
         response.sendFile(path.resolve('./attractions.html'));
+});
+
+app.get('/matches.html', function(request, response) {
+        response.sendFile(path.resolve('./matches.html'));
 });
 
 app.listen(process.env.PORT || 3000);

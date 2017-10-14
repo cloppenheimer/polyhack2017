@@ -6,6 +6,7 @@
 	<title>Location</title>
 	<link rel="stylesheet" href="css/location.css" />
 	<script src="js/locations.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -13,26 +14,21 @@
 		<img src="images/travieLogo.png">
 		<h1>Where would you like to go?</h1>
 
-		<form1 id = "location">
-			<input type = "text" placeholder = "Enter a Destination..."\
-					value = "" style="width:300px; height:50px" onkeydown="search(this)"/>
+		<form1 id = "location" >
+			<input type = "text" placeholder = "Enter a Destination..."
+					value = "" id = "input" style="width:300px; height:50px" >
 		</form1>
 
-		<form2 action="attractions.html" id = "form2">
+		<form2 action="attractions.html" >
 	    	<button type="enter" onclick = "search()" formaction="attractions.html">enter</button>
-		</form2
-		>
+		</form2>
+
 		<script type="text/javascript">
 		
 			function search() {
 				console.log("hi");
-					var form = document.getElementById("form2");
-					var location = form.elements[0].value;
-					console.log(location);
-					if (location == "Boston") {
-						console.log("yay")
-					}
-					getLocations(location);
+				var location = document.getElementById("input").value;
+				getLocations(location);
 				
 			}
 
