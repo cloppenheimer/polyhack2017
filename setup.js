@@ -2,7 +2,7 @@ var express = require('express');
 
 var bodyParser = require('body-parser'); // Required if we need to use HTTP query or post parameters
 var validator = require('validator');
-
+var path = require('path');
 var app = express();
 // See https://stackoverflow.com/questions/5710358/how-to-get-post-query-in-express-node-js
 app.use(bodyParser.json());
@@ -25,11 +25,11 @@ app.use(function(req, res, next) {
 
 app.post('/submit', function(request, response) {
         // put in interests
-        var interests = request.body.interests;
-        var name = document.getElementById("name").innerHTML;
+        //var interests = request.body.interests;
+        /*var name = document.getElementById("name").innerHTML;
         var username = document.getElementById("username").innerHTML;
         var age = document.getElementById("age").innerHTML;
-        var gender = document.getElementById("gender").innerHTML;
+        var gender = document.getElementById("gender").innerHTML;*/
         /*var name = "Michelle";
         var username = "sofaplank";
         var age = 0;
@@ -37,18 +37,19 @@ app.post('/submit', function(request, response) {
         var interests = ["hi", "hello"];*/
 
         var toInsert = {
-                "name": name,
-                "username": username,
-                "age": age,
-                "gender": gender,
-                "interests": interests,
+                "name": "clara",
+                "username": "c",
+                "age": 4,
+                "gender": "m",
+                //"interests": interests,
                 "isCurrentUser": true
                // "interests": interests
         };
 
         db.collection("userInfo", function(error, coll) {
-                db.coll.insert(toInsert);
+                coll.insert(toInsert);
                 if (error) {
+                        console.log("error");
                         response.send(500);
                 }
                 else {
@@ -67,6 +68,10 @@ app.post('/addLocations'), function(request, response) {
         });
 
 }
+
+app.get('/', function(request, response) {
+        response.sendFile(path.resolve('./setup.html'));
+});
 
 app.listen(process.env.PORT || 3000);
 

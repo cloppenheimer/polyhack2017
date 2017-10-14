@@ -7,6 +7,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="setup-style.css" rel="stylesheet" />
+		
 	</head>
 	<body>
 		<div class="container">
@@ -38,16 +39,17 @@
 				</div>  
 	    	</div>
 	    </div>
-	</body>
-	<script type="text/javascript">
-		function loadData()
-        {
-                console.log("test");
-                url = "https://polyhack17.herokuapp.com/submit";
-                //$.post(url, {interests: interests}, function(data){
-				// this can be empty		
-				});
 
-        }
-	</script>
+
+	    <script type="text/javascript">
+			function loadData() {	
+		                console.log("test");
+		                url = "http://localhost:3000/submit";
+		                $.post(url, /*{interests: interests}, */function(data){
+						// this can be empty		
+						});
+        		}
+		</script>
+	</body>
+	
 </html>
