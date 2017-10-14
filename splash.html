@@ -10,13 +10,12 @@
 <body>
 	<h1>Welcome to Travie.</h1>
 
-	<a href = "setup.html">begin</a>
-	<div class = "slide-content" >
-		<img class="mySlides" src="boston.jpeg">
-		<img class="mySlides" src="barcelona.jpeg">
-		<img class="mySlides" src="budapest.jpeg">
-		<img class="mySlides" src="riodejaniero.jpeg">
-	</div>
+	<ul class = "slideshow" >
+		<li><span>Image 1</span></li>
+		<li><span>Image 2</span></li>
+		<li><span>Image 3</span></li>
+		<li><span>Image 4</span></li>
+	</ul>
 
 	<script>
 		var slideIndex = 0;
@@ -24,7 +23,7 @@
 
 		function carousel() {
 		    var i;
-		    var x = document.getElementsByClassName("mySlides");
+		    var x = document.getElementsByClassName("slideshow");
 		    for (i = 0; i < x.length; i++) {
 		      x[i].style.display = "none"; 
 		    }
@@ -36,7 +35,7 @@
 	</script>
 
 	<form action="setup.html">
-    	<button type="submit" formaction="setup.html">Begin</button>
+    	<button type="submit" formaction="setup.html">begin</button>
 	</form>
 
 

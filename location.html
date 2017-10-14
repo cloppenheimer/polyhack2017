@@ -5,15 +5,28 @@
 <head>
 	<title>Location</title>
 	<link rel="stylesheet" href="location.css" />
+	<script src="locations.js"></script>
 </head>
 
 <body>
 	<h1>Where would you like to go?</h1>
 
-	<form>
-		Location: <input type = "text" name = "input" id = "location" />
+	<form id = "location">
+		<input type = "text" placeholder = "Enter a Destination..."\
+				value = "" style="width:300px; height:50px" onkeydown="search(this)"/>
 	</form>
 
+	<script type="text/javascript">
+	
+	function search(ele) {
+		if (event.key == 'Enter') {
+			var form = document.getElementById("form");
+			var location = form.element.value;
+			getLocations(location);
+		}
+	}
+
+	</script>
 </body>
 
 </html>
