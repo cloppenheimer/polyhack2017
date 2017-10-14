@@ -42,21 +42,21 @@ function getLocations(city) {
         };*/
 
 
-        /*var url1 = "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
+        var url1 = "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
         $.get(url1, function(responseArray){
                 console.log(responseArray);
                 var locationNames = [];
                 var info = JSON.parse(request.responseText).data;
                 for (var i = 0; i < info.length; i++) {
-                        console.log(info.name);
-                        locationNames.push(info.name);
+                        console.log(info[i].name);
+                        locationNames.push(info[i].name);
                 }
                 console.log(locationNames);
                 var url2 = "http://localhost:3000/addLocations";
                 $.post(url2, {locations: locationNames}, function(data){
                                 // this can be empty            
                  });
-        });*/
+        });
 
 
 

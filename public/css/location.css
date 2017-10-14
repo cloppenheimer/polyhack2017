@@ -5,28 +5,63 @@ h1 {
 	font-size: 68px;
 	text-align: center;
 	color: white;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 50px;
+}
+
+.location_body {
+	height: 100vh;
+}
+
+img {
+	align-content: left;
+	margin-left: 25px;
+	margin-top: 25px;
 }
 
 body {
 	background-color: #009999;
 	text-align: center;
-	color: white;
-	background:-o-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:-moz-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:-ms-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:linear-gradient(90deg, #009BB9 0%,#00b3b3 100%);
+	background:-o-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:-moz-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:-ms-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:linear-gradient(90deg, #009BB9 0%,#0EDCAD 100%);
 	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    font-size: 100px;
+	background-position: center;
+	font-size: 100px;
 }
+
 input {
 	font-size: 30px;
-	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;;
+	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	text-align: center;
 }
-form {
+
+form1 {
 	font-size: 100px;
 	height: 50px;
+}
+
+button {
+	font-size: 30px;
+	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	height: 7%;
+	width: 10%;
+	background-color: transparent;
+	border-color: white;
+	border-width: 2%;
+	margin-top: 10px;
+	color: white;
+	text-align: center;
+	border-style: solid;
+	outline: none !important;
+}
+
+button:active{
+	outline: none !important;
+}
+
+button:hover {
+	background-color: white;
+	color: #009999;
 }
