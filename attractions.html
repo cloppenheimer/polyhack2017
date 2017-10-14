@@ -4,14 +4,79 @@
 
 <head>
 	<title>Attractions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/attractions.css" />
 </head>
 
-<body>
-	<img src="images/travieLogo.png">
-	<h1>Top Attractions in -enter city name here- </h1>
+<body onload="testFunc()">
+	<!-- <img src="travieLogo.png"> -->
+	<h1>Top Attractions in
+		<span id="city"></span>
+	</h1>
+	<p>Please pick up to 3</p>
+	<div id="boxOne">
 
+	</div>
 
+	<button id="submitButton">Submit</button>
+
+<script type="text/javascript">
+	function testFunc(){
+		var city = "Budapest";
+		$("#city").html(city);
+		responseArray = ["Eiffel Tower", "The Louvre", "Champ d'Elysses", "Home", "A box", "Love"];
+		numElems = responseArray.length;
+		var checks = 0;
+		for(i = 0; i<numElems; i++){
+    		var newDiv = document.createElement("div");
+    		$(newDiv).addClass("container");
+    		$("#boxOne").append(newDiv);
+    		$(newDiv).hover(function(){
+    			console.log(checks);
+    			if (checks > 2 && stop != true){
+					$(this).css({"background-color": "transparent", "color": "white", "cursor": "auto"});
+					$("container:hover").css({"background-color": "transparent", "color": "white", "cursor": "auto"});
+    			}
+    		});
+    		$(newDiv).click(function(){
+    			$(this).css({"background-color": "white", "color": "#009999"});
+    			console.log(checks);
+    			if (checks > 2){
+					$(this).css({"background-color": "transparent", "color": "white", "cursor": "auto"});
+					$("container:hover").css({"background-color": "transparent", "color": "white", "cursor": "auto"});
+    			}
+    			checks++;
+    			stop = true;
+    		});
+		} 
+		var count = 0;
+		$.each($(".container"), function(){           
+        	$(this).html(responseArray[count]).addClass("textFormat");
+        	count++;
+       	});
+	}
+	//function getCity() {
+
+		// var url = "http://localhost:3000/getCity";
+		// $.get(url, function(city){
+  //               	// city is the city string 
+  //               	$("#city").html(city);
+  //                });
+  //       });
+	//}
+
+	// function getLocations() {
+	// 	var url = "http://localhost:3000/getLocations";
+	// 	responseArray = ["Eiffel Tower", "The Louvre", "Champ d'Elysses", "Home", "A box", "Love"]
+	// 		$.get(url, function(responseArray){
+	// 	                	// responseArray is the array of string names
+		                	    
+	// 	    });
+	// }
+</script>
 </body>
 
 
