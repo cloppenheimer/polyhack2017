@@ -8,13 +8,38 @@
 </head>
 
 <body>
-
 	<h1>Welcome to Travie.</h1>
-	<! <a id= "begin" href="setup.html">Click to Begin</a> >
-	
+
+	<a href = "setup.html">begin</a>
+	<div class = "slide-content" >
+		<img class="mySlides" src="boston.jpeg">
+		<img class="mySlides" src="barcelona.jpeg">
+		<img class="mySlides" src="budapest.jpeg">
+		<img class="mySlides" src="riodejaniero.jpeg">
+	</div>
+
+	<script>
+		var slideIndex = 0;
+		carousel();
+
+		function carousel() {
+		    var i;
+		    var x = document.getElementsByClassName("mySlides");
+		    for (i = 0; i < x.length; i++) {
+		      x[i].style.display = "none"; 
+		    }
+		    slideIndex++;
+		    if (slideIndex > x.length) {slideIndex = 1} 
+		    x[slideIndex-1].style.display = "block"; 
+		    setTimeout(carousel, 2000); 
+		}
+	</script>
+
 	<form action="setup.html">
-    	<input type="submit" value="Begin" />
+    	<button type="submit" formaction="setup.html">Begin</button>
 	</form>
+
+
 </body>
 
 </html>

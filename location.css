@@ -1,1 +1,16 @@
 /* location.css */
+
+h1 {
+	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font-size: 68px;
+	text-align: center;
+	color: white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+body {
+	background-color: #009999;
+	text-align: center;
+	color: white;
+}

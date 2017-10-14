@@ -1,7 +1,6 @@
 /* splash.css */
 
 h1 {
-
 	font-size: 68px;
 	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	padding-top: 50px;
@@ -19,10 +18,29 @@ body {
 	background-color: #009999;
 	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	text-align: center;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	color: white;
+	text-decoration: none;
 }
 
+a {
+	text-decoration: none;
+}
 a:hover {
-	color: #f2f2f2;
+	color: #ffffe6;
+}
+
+div {
+	align: center;
+}
+
+button {
+	background-color: f2f2f2;
+	border: 18px #white;
+	color: inherit;
+	border-radius: 0;
+	padding: 13px 32px;
+	font-size: 40px;
+	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	background: transparent;
 }
