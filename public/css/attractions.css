@@ -67,15 +67,18 @@ h1 {
 	margin-left: 25px;
 	margin-top: 25px;
 }*/
+.attractions-body{
+	height: 100vh;
+}
 body {
-	background-color: #009999;
+	/*background-color: #009999;*/
 	color: white;
-	background:-o-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:-moz-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:-ms-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:linear-gradient(90deg, #009BB9 0%,#00b3b3 100%);
+	background:-o-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:-moz-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:-ms-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:linear-gradient(90deg, #009BB9 0%,#0EDCAD 100%);
 	background-repeat: no-repeat;
-    background-size: 100% 100%;
+	background-size: 100% 100%;
     background-position: center;
     font-size: 100px;
     margin: 0px;
