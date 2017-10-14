@@ -28,18 +28,73 @@ img {
 body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 50px;
-	background-color: #009999;
+	/*background-color: #009999;*/
 	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	text-transform: lowercase;
 	text-color: white;
 	text-align: center;
 	text-decoration: none;
-	background:-o-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	/*background:-o-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
 	background:-moz-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
 	background:-ms-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
 	background:linear-gradient(90deg, #009BB9 0%,#0EDCAD 100%);
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: 100% 100%;*/
+}
+.crossfade > figure {
+  animation: imageAnimation 30s linear infinite 0s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center center;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+
+.crossfade > figure:nth-child(1) { background-image: url('images/delhi.jpg'); }
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 6s;
+  background-image: url('images/barcelona.jpeg');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 12s;
+  background-image: url('images/boston.jpeg');
+}
+
+.crossfade > figure:nth-child(4) {
+  animation-delay: 18s;
+  background-image: url('images/budapest.jpeg');
+}
+
+.crossfade > figure:nth-child(5) {
+  animation-delay: 24s;
+  background-image: url('images/riodejaniero.jpeg');
+}
+@keyframes imageAnimation {  
+	0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
 }
 
 .splash_body {
