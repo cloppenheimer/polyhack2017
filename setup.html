@@ -25,11 +25,11 @@
 			          		<h4 class="modal-title">Registration Form</h4>
 			        	</div>
 			        	<div class="modal-body">
-			        		<form>
-								Name: <input type = "text" name = "input" id = "name"/></br></br>
-								Username: <input type = "text" name = "input" id = "username"/></br></br>
-								Age: <input type = "text" name = "input" id = "age"/></br></br>
-								Gender: <input type = "text" name = "input" id = "gender"/></br></br>
+			        		<form id = "form">
+								Name: <input type = "text" name = "input" value = ""/></br></br>
+								Username: <input type = "text" name = "input" value = ""/></br></br>
+								Age: <input type = "text" name = "input" value = ""/></br></br>
+								Gender: <input type = "text" name = "input" value = ""/></br></br>
 							</form>
 							<button onclick="loadData()"> Submit! </button>
 			        	</div>
@@ -43,13 +43,20 @@
 
 
 	    <script type="text/javascript">
-			function loadData() {	
-		                console.log("test");
-		                url = "http://localhost:3000/submit";
-		                $.post(url, /*{interests: interests}, */function(data){
-						// this can be empty		
-						});
-        		}
+		function loadData()
+	        {
+	                console.log("test");
+			url = "http://localhost:3000/submit";
+			var form = document.getElementById("form");
+			var name = form.elements[0].value;
+	        	var username = form.elements[1].value;
+	        	var age = form.elements[2].value;
+	        	var gender = form.elements[3].value;
+
+	                $.post(url, {name: name, username: username, age: age, gender: gender},function(data){
+			// this can be empty		
+			});
+		}
 		</script>
 	</body>
 	

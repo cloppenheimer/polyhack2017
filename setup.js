@@ -26,10 +26,10 @@ app.use(function(req, res, next) {
 app.post('/submit', function(request, response) {
         // put in interests
         //var interests = request.body.interests;
-        /*var name = document.getElementById("name").innerHTML;
-        var username = document.getElementById("username").innerHTML;
-        var age = document.getElementById("age").innerHTML;
-        var gender = document.getElementById("gender").innerHTML;*/
+        var name = request.body.name;
+        var username = request.body.username;
+        var age = request.body.age;
+        var gender = request.body.gender;
         /*var name = "Michelle";
         var username = "sofaplank";
         var age = 0;
@@ -37,10 +37,10 @@ app.post('/submit', function(request, response) {
         var interests = ["hi", "hello"];*/
 
         var toInsert = {
-                "name": "clara",
-                "username": "c",
-                "age": 4,
-                "gender": "m",
+                "name": name,
+                "username": username,
+                "age": age,
+                "gender": gender,
                 //"interests": interests,
                 "isCurrentUser": true
                // "interests": interests
@@ -71,6 +71,7 @@ app.post('/addLocations'), function(request, response) {
 
 app.get('/', function(request, response) {
         response.sendFile(path.resolve('./setup.html'));
+        //response.sendFile(path.resolve('./setup-style.css'));
 });
 
 app.listen(process.env.PORT || 3000);
