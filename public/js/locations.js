@@ -41,6 +41,21 @@ function getLocations(city) {
         };
 
 
+        url = "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
+        $.get(url, function(responseArray){
+                var locationNames = [];
+                var info = JSON.parse(request.responseText).data;
+                for (var i = 0; i < info.length; i++) {
+                        console.log(info.name);
+                        locationNames.push(info.name);
+                }
+                url = "http://localhost:3000/addLocations";
+                $.post(url, {locations: locationNames}, function(data){
+                                // this can be empty            
+                 });
+        });
+
+
 
 
 }
