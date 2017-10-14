@@ -12,7 +12,6 @@
 	<body>
 		<div class="container" id="signIn">
 			<button class="buttons">Sign In</button>
-			<button></button>
 		</div>
 		<div class="container" id="signUp">
 			<button class="buttons" type="button" data-toggle="modal" data-target="#signUpButton">Sign Up
@@ -30,8 +29,38 @@
 								Username: <input type = "text" name = "input" value = ""/></br></br>
 								Age: <input type = "text" name = "input" value = ""/></br></br>
 								Gender: <input type = "text" name = "input" value = ""/></br></br>
+								<div class="bsContainer">
+									<h2>Interests</h2>
+									<p>Pick as many interests as you wish</p>
+								  	<form id="interests">
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="museums">Museums</label>
+									    </div></br>
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="art">Art</label>
+									    </div></br>
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="music">Music</label>
+									    </div></br>
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="sightseeing">Sightseeing</label>
+									    </div></br>
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="sports">Sports</label>
+									    </div></br>
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="nightlife">Nightlife</label>
+									    </div></br>
+									     <div class="checkbox">
+									      <label><input type="checkbox" value="food">Food</label>
+									    </div></br>
+									    <div class="checkbox">
+									      <label><input type="checkbox" value="shopping">Shopping/Fashion</label>
+									    </div></br>
+								  	</form>
+								</div>
 							</form>
-							<button onclick="loadData()"> Submit! </button>
+							<button onclick="loadData()"> Submit </button>
 			        	</div>
 			        	<div class="modal-footer">
 			        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -43,9 +72,27 @@
 
 
 	    <script type="text/javascript">
+
 		function loadData()
-	        {
-	                console.log("test");
+	    {
+    //     	var selections = [];
+    // 		var inputs = document.getElementById('interests').getElementsByTagName('input');
+    // 		console.log(inputs);
+   	// 		var numInputs = inputs.length;
+
+		  //   for(var i=0; i<numInputs; i++) {
+	   //  		if(inputs[i].type == 'checkbox' && inputs[i].checked == true) selections.push(inputs[i].value);
+	 		// }
+ 			// console.log(selections);
+ 			$(document).ready(function() {
+        		$("button").click(function(){
+            	var selections = [];
+            		$.each($("input:checked"), function(){            
+                		selections.push($(this).val());
+           			 });
+        		});
+    		});
+	               // console.log("test");
 			url = "http://localhost:3000/submit";
 			var form = document.getElementById("form");
 			var name = form.elements[0].value;
