@@ -27,4 +27,3 @@ function loadData(interests){
                 db.coll.insert(toInsert);
         });
 }
-hey
