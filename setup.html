@@ -61,7 +61,7 @@
 								</div>
 
 							</form>
-							<button onclick="loadData()"> Submit </button>
+							<a onclick="loadData()" href="location.html" class="button" role="button">Submit
 			        	</div>
 			        	<div class="modal-footer">
 			        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -76,15 +76,6 @@
 
 		function loadData()
 	    {
-    //     	var selections = [];
-    // 		var inputs = document.getElementById('interests').getElementsByTagName('input');
-    // 		console.log(inputs);
-   	// 		var numInputs = inputs.length;
-
-		  //   for(var i=0; i<numInputs; i++) {
-	   //  		if(inputs[i].type == 'checkbox' && inputs[i].checked == true) selections.push(inputs[i].value);
-	 		// }
- 			// console.log(selections);
  			$(document).ready(function() {
         		$("button").click(function(){
             	var selections = [];
@@ -93,7 +84,9 @@
            			 });
         		});
     		});
-	               // console.log("test");
+   			$.each($("input:checked"), function(){            
+            	$('#input').attr('checked', false)
+           	});
 			url = "http://localhost:3000/submit";
 			var form = document.getElementById("form");
 			var name = form.elements[0].value;
@@ -101,8 +94,7 @@
 	        	var age = form.elements[2].value;
 	        	var gender = form.elements[3].value;
 
-	                $.post(url, {name: name, username: username, age: age, gender: gender},function(data){
-			// this can be empty		
+	                $.post(url, {name: name, username: username, age: age, gender: gender},function(data){	
 			});
 		}
 		</script>
