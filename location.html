@@ -19,9 +19,14 @@
 	<script type="text/javascript">
 	
 	function search(ele) {
+		console.log("hi");
 		if (event.key == 'Enter') {
 			var form = document.getElementById("form");
-			var location = form.element.value;
+			var location = form.elements[0].value;
+			console.log(location);
+			if (location == "Boston") {
+				console.log("yay")
+			}
 			getLocations(location);
 		}
 	}

@@ -39,7 +39,7 @@ app.post('/submit', function(request, response) {
                 "age": age,
                 "gender": gender,
                 "interests": interests,
-                "isCurrentUser": true
+                "isCurrentUser": false
         };
 
         db.collection("userInfo", function(error, coll) {
@@ -60,6 +60,7 @@ app.post('/addLocations'), function(request, response) {
         var locations = request.body.locations;
         db.collection("userInfo", function(error, coll) {
                 var currUser = coll.find({isCurrentUser: true});
+                console.log(currUser);
                 var name = currUser.name;
                 coll.update({name: name}, {'$set': {locations: locations}});
                 if (error) {
@@ -83,6 +84,10 @@ app.get('/setup.html', function(request, response) {
 
 app.get('/location.html', function(request, response) {
         response.sendFile(path.resolve('./location.html'));
+});
+
+app.get('/attractions.html', function(request, response) {
+        response.sendFile(path.resolve('./attractions.html'));
 });
 
 app.listen(process.env.PORT || 3000);

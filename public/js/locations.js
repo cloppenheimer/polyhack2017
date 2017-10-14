@@ -1,4 +1,5 @@
 function getLocations(city) {
+        console.log(city);
         var id;
         if (city == "Boston" || city == "boston")
                 id = 60745;
@@ -16,7 +17,7 @@ function getLocations(city) {
                 id = 186338;
 
 
-        var request = new XMLHttpRequest();
+        /*var request = new XMLHttpRequest();
         request.open("POST", "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5", true);
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //var data = "username=Xgzbl3n7&lat="+myLat+"&lng="+myLng;
@@ -38,22 +39,24 @@ function getLocations(city) {
 
                         
                 }
-        };
+        };*/
 
 
-        url = "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
-        $.get(url, function(responseArray){
+        /*var url1 = "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
+        $.get(url1, function(responseArray){
+                console.log(responseArray);
                 var locationNames = [];
                 var info = JSON.parse(request.responseText).data;
                 for (var i = 0; i < info.length; i++) {
                         console.log(info.name);
                         locationNames.push(info.name);
                 }
-                url = "http://localhost:3000/addLocations";
-                $.post(url, {locations: locationNames}, function(data){
+                console.log(locationNames);
+                var url2 = "http://localhost:3000/addLocations";
+                $.post(url2, {locations: locationNames}, function(data){
                                 // this can be empty            
                  });
-        });
+        });*/
 
 
 
