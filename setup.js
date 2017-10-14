@@ -25,25 +25,21 @@ app.use(function(req, res, next) {
 
 app.post('/submit', function(request, response) {
         // put in interests
-        //var interests = request.body.interests;
+        console.log("submitting");
+        var interests = request.body.interests;
         var name = request.body.name;
         var username = request.body.username;
         var age = request.body.age;
         var gender = request.body.gender;
-        /*var name = "Michelle";
-        var username = "sofaplank";
-        var age = 0;
-        var gender = "social construct";
-        var interests = ["hi", "hello"];*/
+        console.log("name " + name)
 
         var toInsert = {
                 "name": name,
                 "username": username,
                 "age": age,
                 "gender": gender,
-                //"interests": interests,
+                "interests": interests,
                 "isCurrentUser": true
-               // "interests": interests
         };
 
         db.collection("userInfo", function(error, coll) {
@@ -53,6 +49,7 @@ app.post('/submit', function(request, response) {
                         response.send(500);
                 }
                 else {
+                        console.log("good");
                         response.send(200);
                 }
         });
