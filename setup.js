@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var mongoUri = "mongodb://travie:travie@ds121015.mlab.com:21015/heroku_jhv50blz" || process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/travie2017';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
+        console.log(error);
         db = databaseConnection;
 });
 
