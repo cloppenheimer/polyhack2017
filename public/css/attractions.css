@@ -1,20 +1,64 @@
 /* attractions.css */
 
+.container{
+	display: flex;
+	width: 200px;
+	height: 70px;
+	background-color: transparent;
+	border-color: white;
+	border-width: 6px;
+	color: white;
+	border-style: solid;
+	padding-bottom: 60px;
+	align-items: center;
+	justify-content: center;
+	display: inline-block;
+    width: 600px;
+    height: 105px;
+    margin: 5px; 
+}
+#boxOne{
+	text-align: center;
+}
+.textFormat{
+	font-size: .5em;
+}
+.container:hover{
+	cursor: pointer;
+	background-color: white;
+	color: #009999;
+}
+#submitButton{
+	height: 70px;
+	width: 150px;
+	font-size: .3em;
+	background-color: transparent;
+	border-color: white;
+	border-width: 2%;
+	color: white;
+	align-items: center;
+	/*position: absolute;*/
+	border-style: solid;
+	outline: none !important;
+}
+p{
+	font-size: .2em;
+	text-align: center;
+}
 h1 {
 	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
-	font-size: 68px;
+	font-size: .5em;
 	text-align: center;
 	color: white;
-	padding-top: 30px;
-	padding-bottom: 50px;
+	/*padding-top: 30px;*/
 	text-align: center;
 }
 
-img {
+/*img {
 	align-content: left;
 	margin-left: 25px;
 	margin-top: 25px;
-}
+}*/
 body {
 	background-color: #009999;
 	color: white;
@@ -26,4 +70,6 @@ body {
     background-size: 100% 100%;
     background-position: center;
     font-size: 100px;
+    margin: 0px;
+    margin-bottom: 300px;
 }
