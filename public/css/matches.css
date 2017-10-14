@@ -8,6 +8,31 @@ h1 {
 	padding-top: 30px;
 	padding-bottom: 50px;
 }
+.matches_body {
+	height: 100vh;
+}
+#boxOne{
+	text-align: center;
+}
+.container{
+	display: flex;
+	width: 200px;
+	height: 70px;
+	background-color: transparent;
+	border-color: white;
+	border-width: 6px;
+	color: white;
+	border-style: solid;
+	padding-bottom: 60px;
+	font-size: 30px;
+	align-items: center;
+	justify-content: center;
+	display: inline-block;
+    width: 600px;
+    height: 105px;
+    margin: 5px; 
+}
+
 body{
 	background-color: #009999;
 	text-align: center;
@@ -17,7 +42,4 @@ body{
 	background:linear-gradient(90deg, #009BB9 0%,#0EDCAD 100%);
 	background-repeat: no-repeat;
 	background-position: center;
-}
-.matches_body {
-	height: 100vh;
 }
