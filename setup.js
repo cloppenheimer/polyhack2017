@@ -23,6 +23,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+var locations;
+
 app.post('/submit', function(request, response) {
         // put in interests
         console.log("submitting");
@@ -57,12 +59,36 @@ app.post('/submit', function(request, response) {
 
 app.post('/addLocations'), function(request, response) {
 
-        var locations = request.body.locations;
-        db.collection("userInfo", function(error, coll) {
+        locations = request.body.locations;
+        console.log(locations);
+        /*db.collection("userInfo", function(error, coll) {
                 var currUser = coll.find({isCurrentUser: true});
                 console.log(currUser);
                 var name = currUser.name;
                 coll.update({name: name}, {'$set': {locations: locations}});
+                if (error) {
+                        console.log("error");
+                        response.send(500);
+                }
+                else {
+                        response.send(200);
+                }
+        });*/
+
+}
+
+app.get('/getLocations'), functions(request, response) {
+        response.send(locations);
+}
+
+app.post('/userLocations'), function(request, response) {
+
+        var userLocations = request.body.userLocations;
+        db.collection("userInfo", function(error, coll) {
+                var currUser = coll.find({isCurrentUser: true});
+                console.log(currUser);
+                var name = currUser.name;
+                coll.update({name: name}, {'$set': {userLocations: userLocations}});
                 if (error) {
                         console.log("error");
                         response.send(500);
