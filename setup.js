@@ -71,12 +71,21 @@ app.post('/addLocations'), function(request, response) {
                 }
                 else {
                         response.send(200);
+                }
         });
 
 }
 
 app.get('/', function(request, response) {
+        response.sendFile(path.resolve('./splash.html'));
+});
+
+app.get('/setup', function(request, response) {
         response.sendFile(path.resolve('./setup.html'));
+});
+
+app.get('/location', function(request, response) {
+        response.sendFile(path.resolve('./location.html'));
 });
 
 app.listen(process.env.PORT || 3000);
