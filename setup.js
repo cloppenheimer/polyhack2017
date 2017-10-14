@@ -80,11 +80,11 @@ app.get('/', function(request, response) {
         response.sendFile(path.resolve('./splash.html'));
 });
 
-app.get('/setup', function(request, response) {
+app.get('/setup.html', function(request, response) {
         response.sendFile(path.resolve('./setup.html'));
 });
 
-app.get('/location', function(request, response) {
+app.get('/location.html', function(request, response) {
         response.sendFile(path.resolve('./location.html'));
 });
 
