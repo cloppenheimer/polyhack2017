@@ -31,6 +31,11 @@ function getLocations(city) {
                                 console.log(info.name);
                                 locationNames.push(info.name);
                         }
+                        url = "https://polyhack2017.herokuapp.com/addLocations";
+                        $.post(url, {locations: locationNames}, function(data){
+                                        // this can be empty            
+                        });
+
                         
                 }
         };

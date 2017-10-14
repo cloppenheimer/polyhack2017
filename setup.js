@@ -3,14 +3,22 @@ var express = require('express');
 var bodyParser = require('body-parser'); // Required if we need to use HTTP query or post parameters
 var validator = require('validator');
 
+var app = express();
+// See https://stackoverflow.com/questions/5710358/how-to-get-post-query-in-express-node-js
+app.use(bodyParser.json());
+// See https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
+app.use(bodyParser.urlencoded({ extended: true }));
+
 var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/polyhack2017';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
         db = databaseConnection;
 });
 
-function loadData(){
+
+app.post('/submit', function(request, response) {
         // put in interests
+        var interests = request.body.interests;
         var name = document.getElementById("name").innerHTML;
         var username = document.getElementById("username").innerHTML;
         var age = document.getElementById("age").innerHTML;
@@ -26,11 +34,31 @@ function loadData(){
                 "username": username,
                 "age": age,
                 "gender": gender,
+                "interests": interests,
                 "isCurrentUser": true
                // "interests": interests
         };
 
         db.collection("userInfo", function(error, coll) {
                 db.coll.insert(toInsert);
+                if (error) {
+                        response.send(500);
+                }
+                else {
+                        response.send(200);
+                }
         });
+});
+
+app.post('/addLocations'), function(request, response) {
+
+        var locations = request.body.locations;
+        db.collection("userInfo", function(error, coll) {
+                var currUser = db.coll.find({isCurrentUser: true});
+                var name = currUser.name;
+                db.coll.update({name: name}, {'$set': {locations: locations}});
+        });
+
 }
+
+
