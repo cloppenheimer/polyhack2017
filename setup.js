@@ -10,10 +10,15 @@ var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
 });
 
 function loadData(interests){
-        var name = document.getElementById("name").innerHTML;
+       /* var name = document.getElementById("name").innerHTML;
         var username = document.getElementById("username").innerHTML;
         var age = document.getElementById("age").innerHTML;
-        var gender = document.getElementById("gender").innerHTML;
+        var gender = document.getElementById("gender").innerHTML;*/
+        var name = "Michelle";
+        var username = "sofaplank";
+        var age = 0;
+        var gender = "social construct";
+        var interests = ["hi", "hello"];
 
         var toInsert = {
                 "name": name,
