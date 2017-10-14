@@ -8,31 +8,9 @@
 </head>
 
 <body>
+	<img src="travieLogo.png">
+	
 	<h1>Welcome to Travie.</h1>
-
-	<ul class = "slideshow" >
-		<li><span>Image 1</span></li>
-		<li><span>Image 2</span></li>
-		<li><span>Image 3</span></li>
-		<li><span>Image 4</span></li>
-	</ul>
-
-	<script>
-		var slideIndex = 0;
-		carousel();
-
-		function carousel() {
-		    var i;
-		    var x = document.getElementsByClassName("slideshow");
-		    for (i = 0; i < x.length; i++) {
-		      x[i].style.display = "none"; 
-		    }
-		    slideIndex++;
-		    if (slideIndex > x.length) {slideIndex = 1} 
-		    x[slideIndex-1].style.display = "block"; 
-		    setTimeout(carousel, 2000); 
-		}
-	</script>
 
 	<form action="setup.html">
     	<button type="submit" formaction="setup.html">begin</button>

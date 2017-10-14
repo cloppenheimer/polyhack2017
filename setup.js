@@ -71,6 +71,7 @@ app.post('/addLocations'), function(request, response) {
                 }
                 else {
                         response.send(200);
+                }
         });
 
 }

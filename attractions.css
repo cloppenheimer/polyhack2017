@@ -5,13 +5,18 @@ h1 {
 	font-size: 68px;
 	text-align: center;
 	color: white;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 50px;
+	text-align: center;
 }
 
+img {
+	align-content: left;
+	margin-left: 25px;
+	margin-top: 25px;
+}
 body {
 	background-color: #009999;
-	text-align: center;
 	color: white;
 	background:-o-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
 	background:-moz-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);

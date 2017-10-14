@@ -3,7 +3,7 @@
 h1 {
 	font-size: 68px;
 	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 50px;
 	text-align: center;
 	color: white;
@@ -11,24 +11,31 @@ h1 {
 	font-style: normal;
 }
 
+
 body {
 	font-family: Helvetica, Arial, sans-serif;
-	/*margin-left:50px;	*/
 	font-size: 50px;
 	background-color: #009999;
 	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
-	text-align: center;
 	text-transform: lowercase;
 	color: white;
+	text-align: center;
 	text-decoration: none;
-	background:-o-linear-gradient(-89deg, #00b3b3 0%, #009999 100%);
-	background:-moz-linear-gradient(-89deg, #00b3b3 0%, #009999 100%);
-	background:-ms-linear-gradient(-89deg, #00b3b3 0%, #009999 100%);
-	background:linear-gradient(-179deg, #00b3b3 0%,#009999 100%);
+	background:-o-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
+	background:-moz-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
+	background:-ms-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
+	background:linear-gradient(90deg, #009BB9 0%,#00b3b3 100%);
+	background-repeat: no-repeat;
 	background-repeat: no-repeat;
     background-size: 100%;
-    background-position: center;
 }
+
+img {
+	align-content: left;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
 slideshow,
 slideshow:after { 
     position: fixed;
@@ -75,7 +82,9 @@ a {
 	color: white;
 	text-decoration: none;
 	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	text-align: center;
 }
+
 a:hover {
 	color: #ffffe6;
 }
@@ -93,6 +102,7 @@ button {
 	border-color: white;
 	border-width: 2%;
 	color: white;
+	text-align: center;
 	border-style: solid;
 	outline: none !important;
 }
