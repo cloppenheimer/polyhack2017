@@ -35,7 +35,7 @@ function getLocations(city) {
                         locationNames.push(info[i].name);
                 }
                 console.log(locationNames);
-                var url2 = "http://localhost:3000/addLocations";
+                var url2 = "https://travie17.herokuapp.com/addLocations";
                 $.post(url2, {locations: locationNames, city: city}, function(data){
                                 // this can be empty            
                  });
