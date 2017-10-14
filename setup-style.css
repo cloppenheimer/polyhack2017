@@ -2,26 +2,31 @@ body{
 	background-color: #009999;
 }
 .container{
-	display: flex;
-	align-items: center;
-	text-align: center;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-flex-flow: row wrap;
 }
 #signIn{
-
 	justify-content: center;
-	float: left;
+	margin-top: 23%;
+	padding-right: 10%;
+	position: absolute;
 }
 #signUp{
-	display: flex;
 	justify-content: center;
-	float: right;
+	padding-left: 30%;
+	margin-top: 23%;
+	position: absolute;
 }
 #buttonContent{
 	display: block;
 }
 .buttons{
-	height: 5%;
-	width: 7%;
+	height: 150px;
+	width: 200px;
 	background-color: transparent;
 	border-color: white;
 	border-width: 2%;
