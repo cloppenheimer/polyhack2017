@@ -9,29 +9,36 @@
 </head>
 
 <body>
-	<h1>Where would you like to go?</h1>
+	<div class = "location_body">
+		<img src="images/travieLogo.png">
+		<h1>Where would you like to go?</h1>
 
-	<form id = "location">
-		<input type = "text" placeholder = "Enter a Destination..."\
-				value = "" style="width:300px; height:50px" onkeydown="search(this)"/>
-	</form>
+		<form1 id = "location">
+			<input type = "text" placeholder = "Enter a Destination..."\
+					value = "" style="width:300px; height:50px" onkeydown="search(this)"/>
+		</form1>
 
-	<script type="text/javascript">
-	
-	function search(ele) {
-		console.log("hi");
-		if (event.key == 'Enter') {
-			var form = document.getElementById("form");
-			var location = form.elements[0].value;
-			console.log(location);
-			if (location == "Boston") {
-				console.log("yay")
+		<form2 action="attractions.html" id = "form2">
+	    	<button type="enter" onclick = "search()" formaction="attractions.html">enter</button>
+		</form2
+		>
+		<script type="text/javascript">
+		
+			function search() {
+				console.log("hi");
+					var form = document.getElementById("form2");
+					var location = form.elements[0].value;
+					console.log(location);
+					if (location == "Boston") {
+						console.log("yay")
+					}
+					getLocations(location);
+				
 			}
-			getLocations(location);
-		}
-	}
 
-	</script>
+		</script>
+
+	</div>
 </body>
 
 </html>

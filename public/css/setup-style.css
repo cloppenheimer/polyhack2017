@@ -9,6 +9,12 @@ body{
   	display: flex;
   	-webkit-flex-flow: row wrap;
 }
+img{
+	justify-content: center;
+	text-align: center;
+	margin-top: 10px;
+	position: absolute;
+}
 #signIn{
 	justify-content: center;
 	margin-top: 23%;
