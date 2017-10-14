@@ -1,0 +1,28 @@
+/* splash.css */
+
+h1 {
+
+	font-size: 68px;
+	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+	color: white;
+	text-transform: lowercase;
+	font-style: normal;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	/*margin-left:50px;	*/
+	font-size: 50px;
+	background-color: #009999;
+	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+}
+
+a:hover {
+	color: #f2f2f2;
+}
