@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 // See https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/polyhack17';
+var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/travie17';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
         db = databaseConnection;
