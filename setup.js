@@ -15,7 +15,7 @@ var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
         db = databaseConnection;
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname , 'public')));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -62,16 +62,21 @@ app.post('/addLocations'), function(request, response) {
 
         var locations = request.body.locations;
         db.collection("userInfo", function(error, coll) {
-                var currUser = db.coll.find({isCurrentUser: true});
+                var currUser = coll.find({isCurrentUser: true});
                 var name = currUser.name;
-                db.coll.update({name: name}, {'$set': {locations: locations}});
+                coll.update({name: name}, {'$set': {locations: locations}});
+                if (error) {
+                        console.log("error");
+                        response.send(500);
+                }
+                else {
+                        response.send(200);
         });
 
 }
 
 app.get('/', function(request, response) {
         response.sendFile(path.resolve('./setup.html'));
-        //response.sendFile(path.resolve('./setup-style.css'));
 });
 
 app.listen(process.env.PORT || 3000);
