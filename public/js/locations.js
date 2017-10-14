@@ -55,7 +55,7 @@ function getLocations(city) {
                 }
                 console.log(locationNames);
                 var url2 = "http://localhost:3000/addLocations";
-                $.post(url2, {locations: locationNames}, function(data){
+                $.post(url2, {locations: locationNames, city: city}, function(data){
                                 // this can be empty            
                  });
         });

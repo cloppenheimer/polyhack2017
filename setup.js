@@ -24,6 +24,7 @@ app.use(function(req, res, next) {
 });
 
 var locations;
+var city;
 
 app.post('/submit', function(request, response) {
         // put in interests
@@ -60,6 +61,7 @@ app.post('/submit', function(request, response) {
 app.post('/addLocations', function(request, response) {
 
         locations = request.body.locations;
+        city = request.body.city;
         console.log(locations);
 
 
@@ -67,6 +69,10 @@ app.post('/addLocations', function(request, response) {
 
 app.get('/getLocations', function(request, response) {
         response.send(locations);
+});
+
+app.get('/getCity', function(request, response) {
+        response.send(city);
 });
 
 app.post('/userLocations', function(request, response) {
@@ -133,6 +139,7 @@ app.get('/getMatches', function(request, response) {
 
         });
 
+        currUser.isCurrentUser = false;
         matches.sort(function (a, b) {
                 return a.percent - b.percent;
         });
