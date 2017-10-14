@@ -5,3 +5,11 @@ https://www.tripadvisor.com/Tourism-g303506-Rio_de_Janeiro_State_of_Rio_de_Janei
 https://www.tripadvisor.com/Tourism-g304026-Lagos_Lagos_State-Vacations.html
 https://www.tripadvisor.com/Tourism-g304551-New_Delhi_National_Capital_Territory_of_Delhi-Vacations.html
 https://www.tripadvisor.com/Tourism-g186338-London_England-Vacations.html
+
+boston: 60745
+budapest: 274887
+beijing: 294212
+rio: 303506
+lagos: 304026
+new delhi: 304551
+london: 186338
