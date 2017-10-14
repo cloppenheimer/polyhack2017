@@ -3,14 +3,21 @@
 h1 {
 	font-size: 68px;
 	font-family: "Avenir-Medium", Helvetica, "Helvetica Neue", Arial, sans-serif;
-	padding-top: 30px;
-	padding-bottom: 50px;
+	padding-top: 25px;
 	text-align: center;
 	color: white;
 	text-transform: lowercase;
 	font-style: normal;
 }
-
+h2 {
+	font-size: 32px;
+	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	text-align: center;
+	padding-bottom: 60px;
+	color: white;
+	text-transform: lowercase;
+	font-style: normal;
+}
 img {
 	align-content: left;
 	margin-left: 25px;
@@ -26,10 +33,10 @@ body {
 	text-color: white;
 	text-align: center;
 	text-decoration: none;
-	background:-o-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:-moz-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:-ms-linear-gradient(-70deg, #009BB9 0%, #00b3b3 100%);
-	background:linear-gradient(90deg, #009BB9 0%,#00b3b3 100%);
+	background:-o-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:-moz-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:-ms-linear-gradient(-70deg, #009BB9 0%, #0EDCAD 100%);
+	background:linear-gradient(90deg, #009BB9 0%,#0EDCAD 100%);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
