@@ -11,7 +11,8 @@ h1 {
 }
 h2 {
 	font-size: 32px;
-	font-family: "Avenir-Light", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font-family: "Avenir", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font-weight: lighter;
 	text-align: center;
 	padding-bottom: 60px;
 	color: white;
