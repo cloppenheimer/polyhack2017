@@ -1,0 +1,37 @@
+body{
+	background-color: #009999;
+}
+.container{
+	display: flex;
+	align-items: center;
+}
+#signIn{
+
+	justify-content: center;
+	float: left;
+}
+#signUp{
+	display: flex;
+	justify-content: center;
+	float: right;
+}
+#buttonContent{
+	display: block;
+}
+.buttons{
+	height: 5%;
+	width: 7%;
+	background-color: transparent;
+	border-color: white;
+	border-width: 2%;
+	color: white;
+	border-style: solid;
+	outline: none !important;
+}
+.buttons:active{
+	outline: none !important;
+}
+.buttons:hover{
+	background-color: white;
+	color: #009999;
+}
