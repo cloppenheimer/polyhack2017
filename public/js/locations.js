@@ -19,36 +19,17 @@ function getLocations(city) {
         console.log("id is" + id);
 
 
-        /*var request = new XMLHttpRequest();
-        request.open("POST", "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5", true);
-        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        //var data = "username=Xgzbl3n7&lat="+myLat+"&lng="+myLng;
 
-        request.send();
-
-        request.onreadystatechange = function() {
-                if (request.readyState == 4 && request.status == 200) {
-                        var locationNames = [];
-                        var info = JSON.parse(request.responseText).data;
-                        for (var i = 0; i < info.length; i++) {
-                                console.log(info.name);
-                                locationNames.push(info.name);
-                        }
-                        url = "http://localhost:3000/addLocations";
-                        $.post(url, {locations: locationNames}, function(data){
-                                        // this can be empty            
-                        });
-
-                        
-                }
-        };*/
-
-
-        var url1 = "http://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
+        var url1 = "https://api.tripadvisor.com/api/partner/2.0/location/" + id + "/attractions?key=9f5acbc1-6233-4162-8a68-31d4e9b6f1c5";
         $.get(url1, function(responseArray){
                 console.log(responseArray);
                 var locationNames = [];
+                //var info = [];
+                responseArray = $.parseJSON(responseArray);
                 var info = responseArray.data;
+                console.log(responseArray["data"]);
+                console.log("hi");
+                console.log(info);
                 for (var i = 0; i < info.length; i++) {
                         console.log(info[i].name);
                         locationNames.push(info[i].name);
@@ -59,8 +40,6 @@ function getLocations(city) {
                                 // this can be empty            
                  });
         });
-
-
 
 
 }

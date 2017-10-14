@@ -31,7 +31,7 @@
 #submitButton{
 	height: 70px;
 	width: 150px;
-	font-size: .3em;
+	font-size: .2em;
 	background-color: transparent;
 	border-color: white;
 	border-width: 2%;
@@ -40,6 +40,14 @@
 	/*position: absolute;*/
 	border-style: solid;
 	outline: none !important;
+}
+#submitButton:hover{
+	cursor: pointer;
+	background-color: white;
+	color: #009999;
+}
+#buttonT{
+	text-align: center;
 }
 p{
 	font-size: .2em;

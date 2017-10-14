@@ -18,16 +18,18 @@
 	</h1>
 	<p>Please pick up to 3</p>
 	<div id="boxOne">
-
 	</div>
-
-	<button id="submitButton">Submit</button>
+	<div id="buttonT">
+		<a href="matches.html">
+			<button id="submitButton">Submit</button>
+		</a>
+	</div>
 
 <script type="text/javascript">
 	function testFunc(){
 		var city = "Budapest";
 		$("#city").html(city);
-		responseArray = ["Eiffel Tower", "The Louvre", "Champ d'Elysses", "Home", "A box", "Love"];
+		responseArray = ["Eiffel Tower", "The Louvre", "Champ d'Elysses", "Home", "A box", "Love", "Champ d'Elysses", "Home", "A box", "Love"];
 		numElems = responseArray.length;
 		var checks = 0;
 		for(i = 0; i<numElems; i++){
